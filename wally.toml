@@ -1,0 +1,37 @@
+[package]
+name = "kartzrbx/dataservicev2"
+description = "Um sistema de gerenciamento de dados robusto para Roblox com suporte a persistencia de perfil"
+version = "0.1.1"
+license = "MIT"
+authors = ["KartzRBX"]
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+include = [
+    "DataService/init.luau",
+    "DataService/Client.luau",
+    "DataService/Server.luau",
+    "DataService/Data.luau",
+    "DataService/Replicator.luau",
+    "DataService/Path.luau",
+    "DataService/Enums.luau",
+    "DataService/default.project.json",
+    "default.project.json",
+    "wally.toml",
+    "README.md",
+    "LICENSE",
+]
+exclude = [
+    "Packages/**",
+    "ServerPackages/**",
+    "DevPackages/**",
+    "**/.vscode/**",
+    "*.rbxl",
+    "*.rbxlx",
+    "sourcemap.json",
+]
+
+[dependencies]
+signal = "sleitnick/signal@2.0.3"
+
+[server-dependencies]
+profilestore = "lm-loleris/profilestore@1.0.3"

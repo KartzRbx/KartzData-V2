@@ -1,0 +1,20 @@
+# Roblox build artifacts
+/*.rbxl
+/*.rbxlx
+/*.rbxm
+/*.rbxmx
+/*.rbxl.lock
+/*.rbxlx.lock
+
+# Rojo
+sourcemap.json
+
+# Wally-installed packages (regenerated via `wally install`)
+/Packages/
+/ServerPackages/
+/DevPackages/
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
