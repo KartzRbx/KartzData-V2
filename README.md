@@ -4,6 +4,8 @@ Um sistema de gerenciamento de dados robusto para Roblox com suporte a persistê
 
 ## Instalação
 
+## Made by KartzDev :>
+
 ### Via Wally
 
 Adicione a seguinte linha ao seu `wally.toml`:
