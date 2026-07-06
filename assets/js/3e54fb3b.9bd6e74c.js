@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[823],{4410:s=>{s.exports=JSON.parse('{"sourceUrl":"https://github.com/KartzRbx/KartzData-V2/blob/master","baseUrl":"/KartzData-V2/","classOrder":[],"apiCategories":[]}')}}]);
