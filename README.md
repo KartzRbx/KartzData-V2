@@ -22,7 +22,7 @@ rojo serve
 
 ```toml
 [dependencies]
-dataservicev2 = "kartzrbx/dataservicev2@2.3.2"
+dataservicev2 = "kartzrbx/dataservicev2@2.3.3"
 ```
 
 ```bash

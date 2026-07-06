@@ -12,7 +12,7 @@ Features:
 - Ordered list queries: GetOrderedList() and GetOrderedListWithPriority() with Enum.OrderList.Asc / Enum.OrderList.Desc
 - Bundled dependencies (signal, quicknet, janitor) — no extra Wally deps required in consuming games
 """
-version = "2.3.2"
+version = "2.3.3"
 license = "MIT"
 authors = ["KartzRBX"]
 registry = "https://github.com/UpliftGames/wally-index"

@@ -1,8 +1,15 @@
 # DataServiceV2 - API e exemplos de uso
 
-Documentacao pratica para usar `kartzrbx/dataservicev2@2.3.2` em jogos Roblox com Wally/Rojo.
+Documentacao pratica para usar `kartzrbx/dataservicev2@2.3.3` em jogos Roblox com Wally/Rojo.
 
 O DataServiceV2 centraliza persistencia com ProfileStore embutido, leitura/escrita por paths tipados (`Paths`), replicacao automatica servidor/cliente via QuickNet e limpeza de conexoes com Janitor. A partir da `2.2.x`, `signal`, `quicknet` e `janitor` vem **embutidos** no pacote (`src/Packages`) — nao e necessario declara-los no `wally.toml` do jogo.
+
+Novidades na `2.3.x`:
+
+- Overlay transitório (`SetTransient`, `UpdateTransient`, `ClearTransient`) — alteracoes visiveis em `Get()` e no cliente, sem salvar no ProfileStore
+- Leitura separada com `GetPersisted()` vs `Get()` (merged)
+- Listas ordenadas com `GetOrderedList()` / `GetOrderedListWithPriority()` e `Enum.OrderList.Asc` / `Enum.OrderList.Desc`
+- Correcao de runtime em `deepCopyTable` na `2.3.3` (erro `attempt to call a nil value` ao mesclar tabelas)
 
 ## Instalacao
 
@@ -10,7 +17,7 @@ No `wally.toml` do jogo:
 
 ```toml
 [dependencies]
-dataservicev2 = "kartzrbx/dataservicev2@2.3.2"
+dataservicev2 = "kartzrbx/dataservicev2@2.3.3"
 ```
 
 Depois rode:
@@ -81,6 +88,34 @@ local coins = data:Get(Paths.Currencies.Coins)
 ```
 
 Importante: os paths ficam no servico (`DataServiceServer.Paths`), nao na instancia `data`.
+
+## Estrutura recomendada do projeto
+
+```text
+src/
+  shared/
+    DataTemplate.luau       -- dados padrao + export type Schema
+  server/
+    DataBootstrap.server.luau -- Server:Init uma vez
+    PlayerData.server.luau    -- PlayerAdded, economia, recompensas
+  client/
+    DataClient.client.luau    -- Client:Init + sinais globais
+    UI/
+      Hud.client.luau       -- le dados, escuta GetChangedSignal
+```
+
+**Faca**
+
+- Chame `Server:Init` em um unico script de boot no `ServerScriptService`.
+- Use `Server:WaitFor(player)` dentro de `PlayerAdded`.
+- Obtenha paths de `DataServiceServer.Paths` (tipados com `DataTemplate.Schema`).
+- No cliente, chame `Client:Init()` uma vez em `StarterPlayerScripts`.
+
+**Evite**
+
+- Chamar `Init` em varios scripts.
+- Guardar paths na instancia `data` (eles ficam no servico).
+- Escrever dados do jogador no cliente.
 
 ## Template de dados
 
@@ -428,3 +463,5 @@ local clientStats = DataServiceClient:GetBufferStats()
 | `attempt to index nil with 'Paths'` em utils shared | Use `require(...).Paths` no server apos `Init`, ou atualize para `>=2.2.2` |
 | Painel de teste salvou moedas | Voce usou `Set`/`Update` em vez de `*Transient` |
 | `UseMock` nao faz overlay | `UseMock` mocka o store inteiro; overlay usa `*Transient` |
+| `attempt to call a nil value` em `Data:148` | Atualize para `>=2.3.3` (correcao em `deepCopyTable`) |
+| CSS/docs 404 no GitHub Pages | Use URLs com `/KartzData-V2/` (repo renomeado de `KartzDataService`) |
