@@ -2,7 +2,7 @@
 
 High-performance Roblox data service with automatic server/client replication, embedded ProfileStore persistence, typed path tokens, QuickNet transport, and Janitor-based connection lifecycle management.
 
-**Documentation:** [kartzrbx.github.io/KartzDataService](https://kartzrbx.github.io/KartzDataService/docs/intro)
+**Documentation:** [kartzrbx.github.io/KartzData-V2](https://kartzrbx.github.io/KartzData-V2/docs/intro)
 
 ## Local testing
 
