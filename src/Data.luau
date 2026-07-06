@@ -139,7 +139,7 @@ const isDescendantPath = function(childKey: string, parentKey: string): boolean
 	return childKey == parentKey or string.sub(childKey, 1, #parentKey + 1) == parentKey .. "\0"
 end
 
-const deepCopyTable = function(value: any): any
+local function deepCopyTable(value: any): any
 	if type(value) ~= "table" then
 		return value
 	end
