@@ -1,12 +1,12 @@
 title = "DataServiceV2"
-gitRepoUrl = "https://github.com/KartzRbx/KartzDataService"
+gitRepoUrl = "https://github.com/KartzRbx/KartzData-V2"
 gitSourceBranch = "master"
 changelog = true
 
 [docusaurus]
 tagline = "ProfileStore persistence, typed paths, and automatic server/client replication for Roblox Luau."
 url = "https://kartzrbx.github.io"
-baseUrl = "/KartzDataService"
+baseUrl = "/KartzData-V2"
 
 [footer]
 style = "dark"

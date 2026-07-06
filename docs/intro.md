@@ -142,4 +142,4 @@ rojo serve
 - [Transient overlay](./guides/transient)
 - [Ordered lists](./guides/ordered-lists)
 - [Full API reference](./api-reference)
-- [Generated API docs](https://kartzrbx.github.io/KartzDataService/api)
+- [Generated API docs](https://kartzrbx.github.io/KartzData-V2/api)
