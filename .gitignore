@@ -18,3 +18,13 @@ sourcemap.json
 .vscode/
 .DS_Store
 Thumbs.db
+sourcemap.json
+selene.toml
+
+# Local tooling
+.claude/
+.build/
+build/
+
+# Local Rojo test sandbox (copy from test-template via scripts/setup-test-env.ps1)
+/Test/

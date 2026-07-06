@@ -1,37 +1,24 @@
 [package]
 name = "kartzrbx/dataservicev2"
-description = "Um sistema de gerenciamento de dados robusto para Roblox com suporte a persistencia de perfil"
-version = "0.1.1"
+description = """
+High-performance Roblox data service with typed path tokens, ProfileStore persistence, and QuickNet replication.
+
+Features:
+- Generic typed templates with chainable Paths tokens (DataService.Paths.Currencies.Coins)
+- Server/client singleton API with automatic replication and Janitor cleanup
+- Transient overlay API (SetTransient, UpdateTransient, ClearTransient) for admin/test panels:
+  changes appear in Get() and replicate to the client, but are NOT saved to ProfileStore
+- Persisted reads via GetPersisted() vs merged reads via Get()
+- Ordered list queries: GetOrderedList() and GetOrderedListWithPriority() with Enum.OrderList.Asc / Enum.OrderList.Desc
+- Bundled dependencies (signal, quicknet, janitor) — no extra Wally deps required in consuming games
+"""
+version = "2.3.2"
 license = "MIT"
 authors = ["KartzRBX"]
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
-include = [
-    "DataService/init.luau",
-    "DataService/Client.luau",
-    "DataService/Server.luau",
-    "DataService/Data.luau",
-    "DataService/Replicator.luau",
-    "DataService/Path.luau",
-    "DataService/Enums.luau",
-    "DataService/default.project.json",
-    "default.project.json",
-    "wally.toml",
-    "README.md",
-    "LICENSE",
-]
-exclude = [
-    "Packages/**",
-    "ServerPackages/**",
-    "DevPackages/**",
-    "**/.vscode/**",
-    "*.rbxl",
-    "*.rbxlx",
-    "sourcemap.json",
-]
+exclude = ["**"]
+include = ["src", "src/**", "default.project.json", "wally.lock", "wally.toml"]
+
 
 [dependencies]
-signal = "sleitnick/signal@2.0.3"
-
-[server-dependencies]
-profilestore = "lm-loleris/profilestore@1.0.3"

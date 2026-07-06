@@ -1,0 +1,5 @@
+# Toolchain for the local Rojo test sandbox.
+# Run `rokit install` in this folder, then `rojo serve`.
+
+[tools]
+rojo = "rojo-rbx/rojo@7.4.4"

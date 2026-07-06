@@ -1,0 +1,33 @@
+{
+  "name": "DataServiceV2-Test",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "DataTemplate": {
+        "$path": "ReplicatedStorage/DataTemplate.luau"
+      },
+      "Packages": {
+        "$className": "Folder",
+        "dataservicev2": {
+          "$path": "../src"
+        }
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "Bootstrap": {
+        "$path": "ServerScriptService/Bootstrap.server.luau"
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "Client": {
+          "$path": "StarterPlayer/StarterPlayerScripts/Client.client.luau"
+        }
+      }
+    }
+  }
+}

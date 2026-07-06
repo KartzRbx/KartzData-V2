@@ -1,0 +1,40 @@
+title = "DataServiceV2"
+gitRepoUrl = "https://github.com/KartzRbx/KartzDataService"
+gitSourceBranch = "master"
+changelog = true
+
+[docusaurus]
+tagline = "ProfileStore persistence, typed paths, and automatic server/client replication for Roblox Luau."
+url = "https://kartzrbx.github.io"
+baseUrl = "/KartzDataService"
+
+[footer]
+style = "dark"
+copyright = "Copyright © 2026 KartzRBX. Built with Moonwave."
+
+[home]
+enabled = true
+
+[[home.features]]
+title = "Simple setup"
+description = "Initialize on server and client in a few lines. Typed templates reconcile automatically through ProfileStore."
+
+[[home.features]]
+title = "Automatic replication"
+description = "Server changes replicate to clients over QuickNet. Clients keep a read-only local mirror."
+
+[[home.features]]
+title = "Typed paths"
+description = "Use DataService.Paths.Currencies.Coins instead of manual path arrays. Fewer typos, better autocomplete."
+
+[[home.features]]
+title = "Transient overlay"
+description = "Admin and QA panels can preview values without saving to ProfileStore."
+
+apiCategories = ["Lifecycle", "Mutation", "Query", "Signals"]
+
+classOrder = [
+	"DataServiceServer",
+	"DataServiceClient",
+	"Data",
+]
